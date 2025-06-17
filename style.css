@@ -1,0 +1,27 @@
+/* Chrome, Safari e Edge */
+::-webkit-scrollbar {
+  width: 2px;            /* larghezza barra verticale */
+  height: 2px;           /* altezza barra orizzontale */
+}
+
+::-webkit-scrollbar-track {
+  background: black;    /* colore dello sfondo della track */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* colore della barra di scorrimento */
+  border-radius: 2px;
+  border: 3px solid #f0f0f0; /* spazio intorno alla thumb */
+}
+
+/* Hover sulla thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;   
+  scrollbar-color: white black; /* colore thumb, colore track */
+}
