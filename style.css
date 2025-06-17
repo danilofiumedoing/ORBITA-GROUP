@@ -1,11 +1,11 @@
 /* Chrome, Safari e Edge */
 ::-webkit-scrollbar {
-  width: 2px;            /* larghezza barra verticale */
-  height: 2px;           /* altezza barra orizzontale */
+  width: 2px; /* larghezza barra verticale */
+  height: 2px; /* altezza barra orizzontale */
 }
 
 ::-webkit-scrollbar-track {
-  background: black;    /* colore dello sfondo della track */
+  background: black; /* colore dello sfondo della track */
   border-radius: 6px;
 }
 
@@ -20,8 +20,325 @@
   background-color: #555;
 }
 
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 /* Firefox */
 * {
-  scrollbar-width: thin;   
+  scrollbar-width: thin;
   scrollbar-color: white black; /* colore thumb, colore track */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* font-family: Arial, sans-serif; */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  
+}
+
+/* .elemento-con-bordo {
+    z-index: 1000;
+  color: white; 
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+} */
+
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+header.transparent {
+  background: rgba(0, 0, 0, 0);
+}
+
+header.solid {
+  background: black;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.parallax {
+  height: 100vh;
+  background-image: url("img/prova.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.parallax h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.section-white {
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: start; /* meglio centrato per adattabilità */
+  z-index: 2;
+  padding: 2em;
+  position: relative;
+  overflow: hidden; /* utile per evitare overflow del testo */
+}
+
+.section-white h2 {
+  margin: 0;
+  font-weight: normal;
+  opacity: 0;
+  transform: translateY(30px);
+  line-height: 1.1;
+  max-width: 100%;
+  word-break: break-word;
+  display: inline-block;
+}
+
+.section-black {
+  /* height: 100vh; */
+  background: rgb(0, 0, 0);
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+  text-align: start;
+  z-index: 2;
+  padding: 2em;
+  /* font-size: 3em; */
+  color: white;
+}
+.section-black h4 {
+  font-size: 2em;
+  margin-bottom: 1em;
+}
+
+
+
+@media (max-width: 600px) {
+  nav a {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .parallax h1 {
+    font-size: 2em;
+  }
+}
+
+
+.horizontal-wrapper {
+  width: 100vw;
+  height: 100dvh; /* altezza viewport meno l'altezza dell'header */
+  overflow: hidden;
+  position: relative;
+  overflow-y: hidden;
+}
+
+
+.container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+  width: calc(100vw * 7); /* 7 sezioni */
+  scroll-snap-type: x mandatory;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+   scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.panel {
+  padding: 2em;
+  flex: 0 0 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  font-size: 2rem;
+  color: white;
+  user-select: none;
+  /* background-image: url("https://picsum.photos/id/1015/1920/1080"); */
+  background-position:  center;
+  background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Immagini di sfondo diverse */
+.panel:nth-child(1) { background-image: url("https://picsum.photos/id/1015/1920/1080"); }
+.panel:nth-child(2) { background-image: url("https://picsum.photos/id/1016/1920/1080"); }
+.panel:nth-child(3) { background-image: url("https://picsum.photos/id/1018/1920/1080"); }
+.panel:nth-child(4) { background-image: url("https://picsum.photos/id/1020/1920/1080"); }
+.panel:nth-child(5) { background-image: url("https://picsum.photos/id/1024/1920/1080"); }
+.panel:nth-child(6) { background-image: url("https://picsum.photos/id/1027/1920/1080"); }
+.panel:nth-child(7) { background-image: url("https://picsum.photos/id/1035/1920/1080"); }
+
+
+/* Overlay per il testo */
+.panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1); /* sfondo scuro con opacità */
+  z-index: 1; /* sotto il contenuto */
+}
+
+/* fai in modo che il contenuto stia sopra l'overlay */
+.panel > * {
+  position: relative;
+  z-index: 2;
+}
+
+.panel:nth-child(odd) {
+  background-color: #1e1e1e;
+}
+
+.panel:nth-child(even) {
+  background-color: #333;
+}
+
+.panel h2 {
+    margin-top: 70px;
+  font-size: 3em;
+  /* margin-bottom: 1rem; */
+  font-weight: normal;
+}
+
+.panel p {
+  font-size: 1.2rem;
+  max-width: 500px;
+  text-align: center;
+}
+
+/* 📱 Responsive mobile */
+@media (max-width: 767px) {
+  .panel h2 {
+    font-size: 1.2em;
+  }
+
+  .panel p {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}
+
+/* .content-after {
+  height: 100vh;
+  background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #111;
+} */
+
+
+.grid-section {
+  display: flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-item {
+  position: relative;
+  width: 50%;
+  height: 50%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: filter 0.3s ease;
+}
+
+.grid-item:hover {
+  filter: brightness(0.7);
+}
+
+.grid-item .overlay {
+  position: absolute;
+  bottom: -100%;
+  width: 100%;
+  padding: 1em;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  text-align: center;
+  transition: bottom 0.5s ease;
+  font-size: 1.2rem;
+}
+
+.grid-item:hover .overlay {
+  bottom: 0;
+}
+
+/* Immagini di sfondo */
+.bg1 { background-image: url('https://picsum.photos/id/1015/800/600'); }
+.bg2 { background-image: url('https://picsum.photos/id/1016/800/600'); }
+.bg3 { background-image: url('https://picsum.photos/id/1025/800/600'); }
+.bg4 { background-image: url('https://picsum.photos/id/1035/800/600'); }
+
+@media (max-width: 767px) {
+  .grid-item {
+    width: 100%;
+    height: 60%;
+  }
 }
