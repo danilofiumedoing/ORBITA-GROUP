@@ -1,0 +1,444 @@
+/* Chrome, Safari e Edge */
+::-webkit-scrollbar {
+  width: 2px; /* larghezza barra verticale */
+  height: 2px; /* altezza barra orizzontale */
+}
+
+::-webkit-scrollbar-track {
+  background: black; /* colore dello sfondo della track */
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #333; /* colore della barra di scorrimento */
+  border-radius: 2px;
+  border: 3px solid #f0f0f0; /* spazio intorno alla thumb */
+}
+
+/* Hover sulla thumb */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.michroma-regular {
+  font-family: "Michroma", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: black black; /* colore thumb, colore track */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  /* font-family: Arial, sans-serif; */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* .elemento-con-bordo {
+    z-index: 1000;
+  color: white; 
+  text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px 1px 0 black,
+    1px 1px 0 black;
+} */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+header.transparent {
+  background: rgba(0, 0, 0, 0);
+}
+
+header.solid {
+  background: black;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.parallax {
+  height: 100vh;
+  background-image: url("/img/forest-image-two.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+
+.parallax h1 {
+  font-size: 3em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.section-white {
+  height: 100vh;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: start; /* meglio centrato per adattabilità */
+  z-index: 2;
+  padding: 2em;
+  position: relative;
+  overflow: hidden; /* utile per evitare overflow del testo */
+}
+
+.section-white h2 {
+  margin: 0;
+  font-weight: normal;
+  opacity: 0;
+  transform: translateY(30px);
+  line-height: 1.1;
+  max-width: 100%;
+  word-break: break-word;
+  display: inline-block;
+}
+
+@media (max-width: 600px) {
+  nav a {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  header {
+    padding: 15px 20px;
+  }
+
+  .logo {
+    font-size: 18px;
+  }
+
+  .parallax h1 {
+    font-size: 2em;
+  }
+}
+
+.hover-box {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hover-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  text-align: center;
+  padding: 20px;
+}
+
+.hover-box:hover .hover-overlay {
+  opacity: 1;
+}
+
+.section-black {
+  background-color: black;
+  color: white;
+  padding: 5em 2em;
+}
+.section-black h1 {
+  font-size: 2em;
+}
+/* 
+  .fdiv{
+    padding: 2em 0;
+    margin: 2em 0;
+    border-right: 2px solid white ;
+  } */
+
+@media (max-width: 768px) {
+  .fdiv {
+    padding: 2em 0;
+    margin: 2em 0;
+    border-bottom: 2px solid white;
+  }
+}
+
+/* style corselloo sponsor inizio */
+
+.carousel-container {
+  position: relative; /* Permette di posizionare le frecce sopra il carosello */
+  width: 100%; /* Larghezza del contenitore */
+  overflow: hidden;
+  background-color: var(
+    --azzurro
+  ); /* Nasconde eventuali overflow del carosello */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel8 {
+  display: flex;
+  overflow-x: auto; /* Abilita lo scorrimento orizzontale */
+  -webkit-overflow-scrolling: touch; /* Abilita lo scorrimento fluido su iOS */
+  width: 100%;
+  cursor: grab;
+  background-color: var(--azzurro);
+  height: 650px;
+  justify-content: flex-start;
+  align-items: center;
+
+  /* Nascondere la scrollbar */
+  scrollbar-width: none; /* Per Firefox */
+  -ms-overflow-style: none; /* Per Internet Explorer e Edge */
+}
+
+.carousel8::-webkit-scrollbar {
+  display: none; /* Per Chrome, Safari e Opera */
+}
+
+.carousel-item8 {
+  min-width: 400px;
+  /* margin: 10px; */
+  border-radius: 5px;
+  /* padding: 20px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item8 img {
+  max-width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: none;
+  touch-action: none; /* Disabilita l'interazione touch */
+}
+
+.carousel-arrow8 {
+  position: absolute;
+  top: 50%; /* Centra verticalmente */
+  transform: translateY(-50%);
+  color: white;
+  font-size: 1.5em;
+  border: none;
+  background-color: transparent;
+  /* padding: 10px; */
+  cursor: pointer;
+  z-index: 10; /* Assicurati che le frecce siano sopra il carosello */
+}
+
+/* style corselloo sponsor fine */
+
+.container1 {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.horizontal-scroll {
+  display: flex;
+  height: 100vh;
+  will-change: transform;
+  position: relative;
+}
+
+.panel {
+  min-width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.panel h1 {
+  position: absolute;
+  bottom: 50px;
+  left: 50px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 4em;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* 👇 Modifica per dispositivi < 767px */
+@media (max-width: 767px) {
+   .panel h1 {
+    font-size: 2em;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+  }
+
+  
+
+
+}
+/* 
+.contact {
+  background-color: white;
+  color: black;
+  height: calc(100vh - 72px);
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.footer {
+  background-color: black;
+  color: white;
+  height: calc(100vh - 72px);
+  position: relative;
+  z-index: 1;
+  background-image: url("/img/forest-image-two.webp");
+  background-size: cover;
+  background-position: center;
+} */
+
+.contact {
+  background-color: white;
+  color: black;
+  height: 100vh;
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+
+
+/* Input e textarea minimal */
+.form-control1,
+.form-select1 {
+  width: 100%;
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #000000;
+  padding: 0.5rem 0;
+  font-size: 1rem;
+}
+
+.form-control1:focus,
+.form-select1:focus {
+  box-shadow: none;
+  outline: none;
+  border-bottom: 1px solid #000000;
+}
+
+/* Label bianca */
+.form-label {
+  color: #000000;
+  margin-bottom: 0.25rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* Placeholder bianco opaco */
+::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Bottone minimal */
+.btn1 {
+  background-color: #ffffff;
+  color: #000000;
+  border: none;
+  border-radius: 0;
+  border-bottom: 1px solid #000000;
+  padding: 0.5rem 2rem;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn1:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+
+.footer {
+  background-color: #000;
+  color: #fff;
+   /* height: 100vh; */
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer a:hover {
+  color: #999;
+}
+
+.social-icon {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .footer .text-md-end {
+    text-align: start !important;
+  }
+}
+
+
+
+#cookie-banner {
+  position: fixed;
+  top: -100px; /* Nasconde il banner inizialmente fuori dallo schermo */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: #000;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  z-index: 1000000;
+  border-radius: 15px;
+  opacity: 0;
+  transition: top 0.7s ease-out, opacity 0.7s ease-out;
+}
