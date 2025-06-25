@@ -33,6 +33,10 @@
     <link href="css/css2.css" rel="stylesheet" />
   </head>
   <body class="michroma-regular">
+
+     <div id="loader">
+    <img src="img/ORBITA GROUP_1 lOGO IG.png" alt="Loader" class="spinner" id="logoLoader">
+  </div>
     <header class="transparent" id="mainHeader">
       <div class="logo">
         <a href="/">
@@ -62,14 +66,15 @@
 
     <div class="section-black row" id="lavori">
       <div class="col-12 col-md-6 fdiv">
-        <h1 class="titolo">COSA FACCIAMO</h1>
-        <p class="p-0 m-0 sottotitolo">I nostri casi di successo</p>
+        <h1 class="titolo">CASI DI SUCCESSO</h1>
+        <!-- <p class="p-0 m-0 sottotitolo">I nostri casi di successo</p> -->
       </div>
       <div class="col-12 col-md-6 mt-md-0">
         <p class="m-0 p-0 testo">
-          Rispondiamo alle sfide dei brand creando piattaforme di comunicazione
-          integrate e misurabili e lavorando insieme ai nostri clienti giorno
-          dopo giorno.
+          Portiamo la tua azienda al successo con strategie digitali integrate,
+          campagne mirate e risultati misurabili. Incrementiamo visibilità,
+          engagement e conversioni lavorando con te, giorno dopo giorno, per far
+          crescere il tuo business in modo concreto e duraturo.
         </p>
       </div>
     </div>
@@ -79,54 +84,53 @@
         <div
           class="hover-box"
           style="
-            background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80');
+            background-image: url('img/Rainbow.png');
+            background-position: left top;
           "
         >
-          <div class="hover-overlay">
+          <!-- <div class="hover-overlay">
             <h4>Testo Immagine 1</h4>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-md-6 p-0">
         <div
           class="hover-box"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=600&q=80');
-          "
+          style="background-image: url('img/Senza\ titolo-1.png')"
         >
-          <div class="hover-overlay">
+          <!-- <div class="hover-overlay">
             <h4>Testo Immagine 2</h4>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-md-6 p-0">
         <div
           class="hover-box"
-          style="
-            background-image: url('https://images.unsplash.com/photo-1523413651479-597eb2da0ad6?auto=format&fit=crop&w=600&q=80');
-          "
+          style="background-image: url('img/Senza\ titolo-3.png')"
         >
-          <div class="hover-overlay">
+          <!-- <div class="hover-overlay">
             <h4>Testo Immagine 3</h4>
-          </div>
+          </div> -->
         </div>
       </div>
       <div class="col-12 col-md-6 p-0">
         <div
           class="hover-box"
           style="
-            background-image: url('https://images.unsplash.com/photo-1494475673543-6a6a27143fc8?auto=format&fit=crop&w=600&q=80');
+            background-image: url('img/Export\ Mody-129.png');
+            background-position: left top;
           "
         >
-          <div class="hover-overlay">
+          <!-- <div class="hover-overlay">
             <h4 class="m-0 p-0">Testo Immagine 4</h4>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
 
     <div
-      class="carousel-container" id="carousel-container"
+      class="carousel-container"
+      id="carousel-container"
       style="background: linear-gradient(to bottom, #ffffff, #ffffff)"
     >
       <i
@@ -402,7 +406,6 @@
           <div
             class="col d-flex flex-wrap justify-content-between align-items-center small"
           >
-            
             <div class="d-flex gap-3 mt-3 mt-md-0">
               <a
                 href="/privacypolicy.html"
@@ -416,12 +419,25 @@
               >
             </div>
             <div class="mt-3 mt-md-0">
-              &copy; 2025 Orbita Group by <strong> <a href="https://www.instagram.com/dandevwebsolutions" >Dandev Web Solutions</a></strong>
+              &copy; 2025 Orbita Group by
+              <strong>
+                <a href="https://www.instagram.com/dandevwebsolutions"
+                  >Dandev Web Solutions</a
+                ></strong
+              >
             </div>
           </div>
         </div>
       </div>
     </footer>
+
+    <div class="box-img-fzq9">
+      <img
+        src="img/orbita.png"
+        alt="Immagine rettangolare"
+        class="img-auto-fzq9"
+      />
+    </div>
 
     <div id="cookie-banner">
       <p>
@@ -429,7 +445,9 @@
         su "Accetta" per acconsentire.
       </p>
       <button id="accept-cookies" class="btn btn-light">Accetta</button>
-      <button id="reject-cookies" class="btn btn-outline-danger">Rifiuta</button>
+      <button id="reject-cookies" class="btn btn-outline-danger">
+        Rifiuta
+      </button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -479,5 +497,14 @@
         });
       };
     </script>
+    
+   <script>
+    // Finto delay di 1 secondo
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('loader').classList.add('hidden');
+      }, 1000); // 1 secondo
+    });
+  </script>
   </body>
 </html>
