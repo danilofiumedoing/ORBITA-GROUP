@@ -132,14 +132,14 @@ nav a {
 }
 
 @media (max-width: 600px) {
-  /* nav a {
+  nav a {
     font-size: 16px;
     margin-left: 10px;
   }
 
   header {
     padding: 15px 20px;
-  } */
+  }
 
   .logo {
     font-size: 18px;
@@ -163,6 +163,106 @@ nav a {
 .hover-box:hover {
   filter: contrast(1.2) hue-rotate(20deg) saturate(1.2);
 }
+/* 
+.hover-box {
+  position: relative;
+  height: 400px;
+  
+  background-size: 120%;
+  background-position: left center;
+  overflow: hidden;
+  cursor: pointer;
+  filter: brightness(0.9) saturate(0.85);
+  transition: background-position 0.7s cubic-bezier(0.4,0,0.2,1), 
+              filter 0.7s cubic-bezier(0.4,0,0.2,1),
+              transform 0.7s cubic-bezier(0.4,0,0.2,1);
+  transform-origin: left center;
+}
+
+
+.hover-box:hover {
+  background-position: 0% center;
+  filter: brightness(1.15) saturate(1.3) contrast(1.1);
+  transform: scale(1.12);
+}
+
+
+.hover-box::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 130%;
+  height: 130%;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255,255,255,0.25), rgba(255,255,255,0) 60%);
+  opacity: 0;
+  filter: blur(40px);
+  mix-blend-mode: screen;
+  clip-path: polygon(
+    0 0, 
+    60% 0, 
+    55% 15%, 
+    70% 40%, 
+    50% 60%, 
+    65% 80%, 
+    45% 100%, 
+    0% 100%
+  );
+  transition: opacity 0.7s ease;
+  z-index: 2;
+}
+
+.hover-box:hover::before {
+  opacity: 1;
+  animation: waveLight 3s ease-in-out infinite alternate;
+}
+
+
+@keyframes waveLight {
+  0% {
+    clip-path: polygon(
+      0 0, 
+      60% 0, 
+      55% 15%, 
+      70% 40%, 
+      50% 60%, 
+      65% 80%, 
+      45% 100%, 
+      0% 100%
+    );
+    background-position: 0% 50%;
+  }
+  50% {
+    clip-path: polygon(
+      0 0, 
+      65% 5%, 
+      60% 20%, 
+      75% 45%, 
+      55% 65%, 
+      70% 85%, 
+      50% 100%, 
+      0% 100%
+    );
+    background-position: 15% 50%;
+  }
+  100% {
+    clip-path: polygon(
+      0 0, 
+      60% 0, 
+      55% 15%, 
+      70% 40%, 
+      50% 60%, 
+      65% 80%, 
+      45% 100%, 
+      0% 100%
+    );
+    background-position: 0% 50%;
+  }
+}
+ */
+
+
 
 .section-black {
   background-color: black;
@@ -172,7 +272,12 @@ nav a {
 .section-black h1 {
   font-size: 2em;
 }
-
+/* 
+  .fdiv{
+    padding: 2em 0;
+    margin: 2em 0;
+    border-right: 2px solid white ;
+  } */
 
 @media (max-width: 768px) {
   .fdiv {
@@ -181,18 +286,23 @@ nav a {
     border-bottom: 2px solid white;
   }
   .hover-box {
-    height: 300px;
-
-    background-position: left center;
-  }
-
-  .parallax {
-    height: 100vh;
-    background-image: url("/img/landing\ mobile.png");
-    background-size: cover;
-    background-position: center;
-  }
+  height: 300px;
+  
+  background-position: left center;
+  
 }
+
+.parallax {
+  height: 100vh;
+  background-image: url("/img/landing\ mobile.png");
+  background-size: cover;
+  background-position: center;
+  
+}
+}
+
+
+
 
 /* style corselloo sponsor inizio */
 
@@ -296,15 +406,38 @@ nav a {
 
 /* 👇 Modifica per dispositivi < 767px */
 @media (max-width: 767px) {
-  .panel h1 {
+   .panel h1 {
     font-size: 2em;
     bottom: 100px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
   }
+
+  
+
+
+}
+/* 
+.contact {
+  background-color: white;
+  color: black;
+  height: calc(100vh - 72px);
+  padding: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
+.footer {
+  background-color: black;
+  color: white;
+  height: calc(100vh - 72px);
+  position: relative;
+  z-index: 1;
+  background-image: url("/img/forest-image-two.webp");
+  background-size: cover;
+  background-position: center;
+} */
 
 .contact {
   background-color: white;
@@ -314,6 +447,8 @@ nav a {
   position: relative;
   z-index: 2;
 }
+
+
 
 /* Input e textarea minimal */
 .form-control1,
@@ -366,10 +501,11 @@ nav a {
   cursor: pointer;
 }
 
+
 .footer {
   background-color: #000;
   color: #fff;
-  /* height: 100vh; */
+   /* height: 100vh; */
 }
 
 .footer a {
@@ -392,6 +528,8 @@ nav a {
   }
 }
 
+
+
 #cookie-banner {
   position: fixed;
   top: -100px; /* Nasconde il banner inizialmente fuori dallo schermo */
@@ -409,50 +547,47 @@ nav a {
   transition: top 0.7s ease-out, opacity 0.7s ease-out;
 }
 
+
 .box-img-fzq9 {
-  width: 100%;
-  overflow: hidden;
-}
+      width: 100%;
+      overflow: hidden;
+    }
 
-.img-auto-fzq9 {
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: 100%;
-}
+    .img-auto-fzq9 {
+      width: 100%;
+      height: auto;
+      display: block;
+      max-width: 100%;
+    }
 
-#loader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  transition: opacity 0.5s ease;
-}
+ #loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
 
-/* Immagine che gira */
-.spinner {
-  width: 100px;
-  /* height: 100px; */
-  animation: spin 1s linear infinite;
-}
+    /* Immagine che gira */
+    .spinner {
+      width: 100px;
+      /* height: 100px; */
+      animation: spin 1s linear infinite;
+    }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
 
-/* Nascondi il loader */
-.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
+    /* Nascondi il loader */
+    .hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
